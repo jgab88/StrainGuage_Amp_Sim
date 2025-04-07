@@ -1,0 +1,1700 @@
+
+**** 04/06/25 16:23:53 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Rgauge_simple"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFi
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Rgauge_simple.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM Vsweep 1 2.5 1 
+.OPTIONS OPTS
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.OPTIONS SPEED_LEVEL= 5
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source STRAINGUAGE_AMP
+R_R1         VSIG+ VREF  350 TC=0,0 
+R_R2         VSIG- VREF  350 TC=0,0 
+R_R3         0 VSIG+  350 TC=0,0 
+R_R4         0 VSIG-  {Rgauge} TC=0,0 
+X_U1         VSIG+ VSIG- VREF 0 N00824 2.5V N00913 N00917 INA333
+V_Vref         VREF 0 {Vsweep}
+R_R5         N00913 N00917  2.56K TC=0,0 
+X_U2         N01230 2.5V 0 VREF N01527 OPA336
+R_R6         VREF 2.5V  10k TC=0,0 
+R_R7         2.5V 0  10k TC=0,0 
+R_R8         2.5V N01527  10k TC=0,0 
+R_R9         N00824 N01230  10k TC=0,0 
+R_R10         0 N01527  10k TC=0,0 
+         
+.PRINT         TRAN V([0])   
+.PARAM  vsweep=5v rgauge=350
+
+**** RESUMING Rgauge_simple.cir ****
+.END
+
+**** 04/06/25 16:23:53 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Rgauge_simple"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFi
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.Xe_n.DVN   
+          IS  100.000000E-18 
+          KF   10.000000E-12 
+
+
+**** 04/06/25 16:23:53 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Rgauge_simple"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFi
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.XU4.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.XU3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.XU2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.XU1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA1.XU1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA1.XU2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA1.XU3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA2.XU1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA2.XU2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA2.XU3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA3.XU1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA3.XU2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.XA3.XU3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 04/06/25 16:23:53 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Rgauge_simple"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFi
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.S_VSWITCH_1 
+         RON     .01         
+        ROFF    1.000000E+09 
+         VON     .01         
+        VOFF    0            
+
+
+               X_U2.S_VSWITCH_3 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U2.S_VSWITCH_4 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.XA1.S_VSWITCH_1 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U1.XA2.S_VSWITCH_1 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U1.XA3.S_VSWITCH_1 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.XA3.S_VSWITCH_2 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U1.XA3.S_VSWITCH_3 
+         RON     .01         
+        ROFF    1.000000E+09 
+         VON     .01         
+        VOFF    0            
+
+
+               X_U2.XU5.S_VSWITCH_1 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.XA1.XU5.S_VSWITCH_1 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .6          
+
+
+               X_U1.XA1.XU5.S_VSWITCH_2 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.XA2.XU5.S_VSWITCH_1 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .6          
+
+
+               X_U1.XA2.XU5.S_VSWITCH_2 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.XA3.XU5.S_VSWITCH_1 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .6          
+
+
+               X_U1.XA3.XU5.S_VSWITCH_2 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+**** 04/06/25 16:23:53 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Rgauge_simple"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFi
+
+
+ ****     OPTION SUMMARY
+
+
+******************************************************************************
+
+
+
+  OPTS
+
+DC ANALYSIS -
+
+    ITL1 =  150
+    ITL2 =   20
+  RELTOL =    1.0000E-03
+  ABSTOL =    1.0000E-12
+   VNTOL =    1.0000E-06
+    GMIN =    1.0000E-12
+VLTEXPLIMIT =     .5     
+ DIODERS =    0       
+DIODECJO =    0       
+
+
+TRANSIENT ANALYSIS -
+
+    ITL4 =   10
+TSTEPDIVFACTOR =    8
+   TRTOL =    7       
+  CHGTOL =   10.0000E-15
+DMFACTOR =    1       
+FSTDELFACTOR =    1       
+
+
+MISCELLANEOUS -
+
+  NUMDGT =    4
+   WIDTH =   80
+    DEFL =  100.0000E-06
+    DEFW =  100.0000E-06
+   DEFAD =    0       
+   DEFAS =    0       
+    TNOM =   27       
+ RNDSEED =    0       
+
+
+DIGITAL -
+
+   DIGMNTYMX =    2
+    DIGIOLVL =    1
+DIGINITSTATE =    2
+ DIGERRLIMIT =    0
+DIGERRDEFAULT =   20
+     DIGFREQ =   10.0000E+09
+     DIGDRVF =    2       
+     DIGDRVZ =   20.0000E+03
+   DIGOVRDRV =    2.5     
+DIGMNTYSCALE =     .4     
+DIGTYMXSCALE =    1.6     
+
+Model-Specific Temperatures During Sweep  Param value = 1
+
+ **** RESISTORS
+
+               X_U1.R1 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R2 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R3 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        5.000E+04      5.000E+04      1.500E+05  
+
+
+               X_U1.R4 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R5 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R6 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.500E+05      1.500E+05      1.500E+05  
+
+
+               X_U1.R7 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R8 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R9 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E-03  
+
+
+               X_U1.R59 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R60 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R88 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      1.000E+00  
+
+
+               X_U1.R89 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R77 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R76 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+02      1.000E+02  
+
+
+               X_U2.R75 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R74 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R39 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+12  
+
+
+               X_U2.R37 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R42 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R38 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-03      1.000E+00  
+
+
+               X_U2.R36 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R40 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R41 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E-03      1.000E-03  
+
+
+               X_U2.R21 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R20 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R29 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U2.R30 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R22 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R19 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E+12  
+
+
+               X_U2.R12 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R16 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R13 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U2.R17 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R15 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R14 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U2.R26 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R23 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R25 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U2.R24 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R27 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R28 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E-03      1.000E-03  
+
+
+               X_U2.R32 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R31 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R11 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+00      1.000E+12  
+
+
+               X_U2.R18 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R33 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R10 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+12  
+
+
+               X_U2.R47 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R9 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R7 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E-03      1.000E+12  
+
+
+               X_U2.R6 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R8 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R89 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E+00  
+
+
+               X_U2.R5 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R60 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R3 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+12  
+
+
+               X_U2.R59 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R4 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R88 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U2.R_PSR <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R2 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R1 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E-03  
+
+
+               X_U2.R_CMR <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R53 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R52 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+12      1.000E+12  
+
+
+               X_U2.R35 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R34 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R_PSR <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      1.000E-02      1.000E+03  
+
+
+               X_U1.XA1.R1 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R2 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R4 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      9.155E+03  
+
+
+               X_U1.XA1.R6 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R7 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R8 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U1.XA1.R9 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R10 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R11 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E+12  
+
+
+               X_U1.XA1.R18 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R23 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R24 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+00  
+
+
+               X_U1.XA1.R25 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R26 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R27 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E-03  
+
+
+               X_U1.XA1.R28 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R31 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R32 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+00      1.000E+02  
+
+
+               X_U1.XA1.R33 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R34 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R35 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E-02      1.000E-02  
+
+
+               X_U1.XA1.R36 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R37 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R38 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U1.XA1.R39 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R40 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R41 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-03      1.000E-03  
+
+
+               X_U1.XA1.R42 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R52 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R53 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E+12  
+
+
+               X_U1.XA1.R76 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.R77 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.R88 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U1.XA1.R89 <X_U1.XA1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R_PSR <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R1 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E-03  
+
+
+               X_U1.XA2.R2 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R4 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R6 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      9.155E+03      1.000E+12  
+
+
+               X_U1.XA2.R7 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R8 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R9 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U1.XA2.R10 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R11 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R18 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+02  
+
+
+               X_U1.XA2.R23 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R24 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R25 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E+00  
+
+
+               X_U1.XA2.R26 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R27 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R28 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-03      1.000E-03  
+
+
+               X_U1.XA2.R31 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R32 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R33 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+02      1.000E+02  
+
+
+               X_U1.XA2.R34 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R35 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R36 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      1.000E-02      1.000E+00  
+
+
+               X_U1.XA2.R37 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R38 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R39 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E+12  
+
+
+               X_U1.XA2.R40 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R41 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R42 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E-03  
+
+
+               X_U1.XA2.R52 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R53 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R76 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+02  
+
+
+               X_U1.XA2.R77 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.R88 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.R89 <X_U1.XA2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+00      1.000E+00  
+
+
+               X_U1.XA3.R_PSR <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R1 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R2 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E-03  
+
+
+               X_U1.XA3.R6 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R7 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R8 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U1.XA3.R9 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R10 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R11 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E+12  
+
+
+               X_U1.XA3.R12 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R13 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R14 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+03      1.000E+03  
+
+
+               X_U1.XA3.R15 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R16 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R17 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E-03  
+
+
+               X_U1.XA3.R18 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R19 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R20 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+00  
+
+
+               X_U1.XA3.R21 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R22 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R23 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+12  
+
+
+               X_U1.XA3.R24 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R25 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R26 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+12  
+
+
+               X_U1.XA3.R27 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R28 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R29 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E-03  
+
+
+               X_U1.XA3.R30 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R31 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R32 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+00      1.000E+02  
+
+
+               X_U1.XA3.R33 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R34 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R35 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E-02      1.000E-02  
+
+
+               X_U1.XA3.R36 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R37 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R38 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U1.XA3.R39 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R40 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R41 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-03      1.000E-03  
+
+
+               X_U1.XA3.R42 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R47 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R52 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+02      1.000E+12  
+
+
+               X_U1.XA3.R53 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R74 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R75 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E+00  
+
+
+               X_U1.XA3.R76 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.R77 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.R88 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U1.XA3.R89 <X_U1.XA3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU4.R74 <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU4.R2b <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      9.970E+07  
+
+
+               X_U2.XU4.R73 <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU4.R49 <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU4.R2a <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.667E+04  
+
+
+               X_U2.XU4.R48 <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU4.Rsrc <X_U2.XU4.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU3.R74 <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.000E+00  
+
+
+               X_U2.XU3.R2b <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU3.R73 <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU3.R49 <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        4.167E+06      1.000E+08      1.000E+00  
+
+
+               X_U2.XU3.R2a <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU3.R48 <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU3.Rsrc <X_U2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        6.504E+04      1.000E+08      1.000E+00  
+
+
+               X_U2.XU2.R74 <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU2.R2b <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU2.R73 <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      4.167E+06      1.000E+08  
+
+
+               X_U2.XU2.R49 <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU2.R2a <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU2.R48 <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      6.504E+04      1.000E+08  
+
+
+               X_U2.XU2.Rsrc <X_U2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R4_A0 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R3_A0 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+06      1.000E+06  
+
+
+               X_U2.XU1.R4_VS <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R4_A2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R5_A2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+00      1.000E+04  
+
+
+               X_U2.XU1.R6_A2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R3_A3 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R3_A4 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.394E+03      1.000E+06      1.000E+06  
+
+
+               X_U2.XU1.R3_A5 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R3_A6 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R4_CC <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      1.000E+03  
+
+
+               X_U2.XU1.R4_CL <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R2_1 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R1_1 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      5.846E+03      1.000E+04  
+
+
+               X_U2.XU1.Rdc_1 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R5_2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R4_2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      5.546E+05  
+
+
+               X_U2.XU1.R7_2 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R1_3 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.R11_3 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      3.200E-03  
+
+
+               X_U2.XU1.R10_3 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.XU1.R9_3 <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.XU1.Rdummy <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.013E+05  
+
+
+               X_U2.XU1.Rx <X_U2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R1_1 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R1_3 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.013E+06      1.000E+04      1.000E+04  
+
+
+               X_U1.XA1.XU1.R1_5 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R2_1 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R2_3 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      9.006E+01      3.279E+04  
+
+
+               X_U1.XA1.XU1.R3_A0 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R3_A2 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R4_2 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      3.200E+06  
+
+
+               X_U1.XA1.XU1.R4_4 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R4_A0 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R4_CC <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        9.040E+03      1.000E+06      1.000E+03  
+
+
+               X_U1.XA1.XU1.R4_CL <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R4_VS <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R5_2 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+03      1.000E+04  
+
+
+               X_U1.XA1.XU1.R5_4 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R7_2 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R7_4 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U1.XA1.XU1.R9_5 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.R10_5 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.R11_5 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      1.267E-01  
+
+
+               X_U1.XA1.XU1.RDC_1 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU1.RDC_3 <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU1.RDUMMY <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      3.834E+04  
+
+
+               X_U1.XA1.XU1.RX <X_U1.XA1.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU2.R2A <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU2.R2B <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.834E+05      3.001E+04      8.065E+05  
+
+
+               X_U1.XA1.XU2.R48 <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU2.R49 <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU2.R73 <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.000E+08  
+
+
+               X_U1.XA1.XU2.R74 <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU2.RSRC <X_U1.XA1.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU3.R2A <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      5.714E+02  
+
+
+               X_U1.XA1.XU3.R2B <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU3.R48 <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU3.R49 <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.667E+07      1.000E+08      1.000E+00  
+
+
+               X_U1.XA1.XU3.R73 <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA1.XU3.R74 <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA1.XU3.RSRC <X_U1.XA1.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.000E+00  
+
+
+               X_U1.XA2.XU1.R1_1 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R1_3 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R1_5 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+00  
+
+
+               X_U1.XA2.XU1.R2_1 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R2_3 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R3_A0 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        9.006E+01      3.279E+04      1.000E+06  
+
+
+               X_U1.XA2.XU1.R3_A2 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R4_2 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R4_4 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      3.200E+06      9.040E+03  
+
+
+               X_U1.XA2.XU1.R4_A0 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R4_CC <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R4_CL <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+03      1.000E+03  
+
+
+               X_U1.XA2.XU1.R4_VS <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R5_2 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R5_4 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+04      1.000E+04  
+
+
+               X_U1.XA2.XU1.R7_2 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R7_4 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.R9_5 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.XA2.XU1.R10_5 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.R11_5 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.RDC_1 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.267E-01      1.000E+00  
+
+
+               X_U1.XA2.XU1.RDC_3 <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU1.RDUMMY <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU1.RX <X_U1.XA2.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      3.834E+04      3.834E+05  
+
+
+               X_U1.XA2.XU2.R2A <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU2.R2B <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU2.R48 <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.001E+04      8.065E+05      1.000E+08  
+
+
+               X_U1.XA2.XU2.R49 <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU2.R73 <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU2.R74 <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+08      1.000E+00  
+
+
+               X_U1.XA2.XU2.RSRC <X_U1.XA2.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU3.R2A <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU3.R2B <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      5.714E+02      1.667E+07  
+
+
+               X_U1.XA2.XU3.R48 <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU3.R49 <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA2.XU3.R73 <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.000E+08  
+
+
+               X_U1.XA2.XU3.R74 <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA2.XU3.RSRC <X_U1.XA2.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R1_1 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U1.XA3.XU1.R1_3 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R1_5 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R2_1 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      9.006E+01  
+
+
+               X_U1.XA3.XU1.R2_3 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R3_A0 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R3_A2 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.279E+04      1.000E+06      1.000E+06  
+
+
+               X_U1.XA3.XU1.R4_2 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R4_4 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R4_A0 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.200E+06      9.040E+03      1.000E+06  
+
+
+               X_U1.XA3.XU1.R4_CC <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R4_CL <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R4_VS <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+03      1.000E+03  
+
+
+               X_U1.XA3.XU1.R5_2 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R5_4 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R7_2 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+00  
+
+
+               X_U1.XA3.XU1.R7_4 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.R9_5 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.R10_5 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U1.XA3.XU1.R11_5 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.RDC_1 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU1.RDC_3 <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.267E-01      1.000E+00      1.000E+00  
+
+
+               X_U1.XA3.XU1.RDUMMY <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU1.RX <X_U1.XA3.XU1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU2.R2A <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.834E+04      3.834E+05      3.001E+04  
+
+
+               X_U1.XA3.XU2.R2B <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU2.R48 <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU2.R49 <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        8.065E+05      1.000E+08      1.000E+00  
+
+
+               X_U1.XA3.XU2.R73 <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU2.R74 <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU2.RSRC <X_U1.XA3.XU2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      1.000E+00      1.000E+00  
+
+
+               X_U1.XA3.XU3.R2A <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU3.R2B <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU3.R48 <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        5.714E+02      1.667E+07      1.000E+08  
+
+
+               X_U1.XA3.XU3.R49 <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.XA3.XU3.R73 <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.XA3.XU3.R74 <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+08      1.000E+00  
+
+
+               X_U1.XA3.XU3.RSRC <X_U1.XA3.XU3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00  
+
+
+
+Starting pseudo-transient algorithm.
+
+INFO(ORPSIM-16594): To improve Pseudotransient Convergence and Performance, set following options to relax stabilization criteria for capacitor currents and inductor voltages: PTRANABSTOL=1e-5, PTRANVNTOL=1e-4
+
+WARNING(ORPSIM-16534): Using high values of ITL4 for Speed Level > 0 may increase total simulation job time.
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( 2.5V)     .5000  ( VREF)    1.0000  (VSIG+)     .5000  (VSIG-)     .5000      
+
+(N00824)     .5004 (N00913)     .5000 (N00917)     .5000 (N01230)     .5000     
+
+(N01527)     .4996 (X_U1.13)     .5000                   (X_U1.14) 500.0E-09    
+
+(X_U1.15) 500.5E-09                   (X_U1.16)    1.0000                       
+
+(X_U1.17)    1.0000                   (X_U2.19) 29.41E-06                       
+
+(X_U2.20) 36.58E-06                   (X_U2.21) 11.11E-06                       
+
+(X_U2.22)     .5000                   (X_U2.23)     .4999                       
+
+(X_U2.24)     .0748                   (X_U2.26)     .0276                       
+
+(X_U2.27)     .4996                   (X_U2.30)     .5000                       
+
+(X_U2.31) 11.11E-06                   (X_U2.32) 11.11E-06                       
+
+(X_U2.33) 59.02E-06                   (X_U2.34) 59.02E-06                       
+
+(X_U2.35)    2.8615                   (X_U2.36)    2.8615                       
+
+(X_U2.37)   -1.9133                   (X_U2.38)   -1.9132                       
+
+(X_U2.39)    5.1127                   (X_U2.40)   -5.5072                       
+
+(X_U2.41) 11.11E-06                   (X_U2.42) 11.11E-06                       
+
+(X_U2.43)    2.8615                   (X_U2.44)   -1.9133                       
+
+(X_U2.45)  112.0000                   (X_U2.46) -116.0000                       
+
+(X_U2.47)   -1.9191                   (X_U2.48) 11.11E-06                       
+
+(X_U2.49) 11.11E-06                   (X_U2.50) 11.11E-06                       
+
+(X_U2.51) 11.11E-06                   (X_U2.52) 11.11E-06                       
+
+(X_U2.53) 11.11E-06                   (X_U2.54)    -.0047                       
+
+(X_U2.55)    1.0064                   (X_U2.56)    -.0047                       
+
+(X_U2.57)    1.0064                   (X_U2.58)     .5043                       
+
+(X_U2.59)     .5068                   (X_U2.60)     .5043                       
+
+(X_U2.61)     .5068                   (X_U2.62) 11.11E-06                       
+
+(X_U2.63)    -.0053                   (X_U2.64)     .4996                       
+
+(X_U2.65)     .4997                   (X_U2.66)     .4999                       
+
+(X_U2.67)     .8000                   (X_U2.68)   -1.0000                       
+
+(X_U2.69)     .4999                   (X_U2.70) 11.11E-06                       
+
+(X_U2.71)    1.0000                   (X_U2.72) 12.12E-12                       
+
+(X_U2.73)     .4999                   (X_U2.74)     .4999                       
+
+(X_U2.75)     .4999                   (X_U1.MID)     .5000                      
+
+(X_U2.MID) 11.11E-06                  (X_U2.ESDn)     .5000                     
+
+(X_U2.ESDp)     .5000                 (X_U2.VCLP)     .4997                     
+
+(X_U2.CLAMP)   -1.9191                (X_U2.SW_OL) 11.11E-06                    
+
+(X_U2.VCC_B) 12.11E-12                (X_U2.VEE_B)    1.0000                    
+
+(X_U2.VIMON)    -.0053                (X_U2.XU2.4) 11.11E-06                    
+
+(X_U2.XU2.5) 11.11E-06                (X_U2.XU2.6) 11.11E-06                    
+
+(X_U2.XU2.7) 10.68E-06                (X_U2.XU3.4) 12.13E-06                    
+
+(X_U2.XU3.5) 36.58E-06                (X_U2.XU3.6) 36.58E-06                    
+
+(X_U2.XU3.7)     .0392                (X_U2.XU4.4) 20.25E-06                    
+
+(X_U2.XU4.5) 29.41E-06                (X_U2.XU4.6) 29.41E-06                    
+
+(X_U2.XU4.7)     .1098                (X_U1.IN+_10)     .5000                   
+
+(X_U1.IN+_12)     .5000               (X_U1.IN+_20)     .5001                   
+
+(X_U1.IN-_19)     .5001               (X_U1.OUT_11)     .5002                   
+
+(X_U1.OUT_18)     .4998               (X_U1.XA1.34)     .5000                   
+
+(X_U1.XA1.35)     .5000               (X_U1.XA1.36)     .0300                   
+
+(X_U1.XA1.37)     .9700               (X_U1.XA1.43)     .5000                   
+
+(X_U1.XA1.44)     .4998               (X_U1.XA1.47)     .5000                   
+
+(X_U1.XA1.48)     .5000               (X_U1.XA1.49)     .5000                   
+
+(X_U1.XA1.50)   48.5000               (X_U1.XA1.51)  -68.5000                   
+
+(X_U1.XA1.52)     .4998               (X_U1.XA1.53)     .5000                   
+
+(X_U1.XA1.54)     .5000               (X_U1.XA1.55)     .5000                   
+
+(X_U1.XA1.56)     .5000               (X_U1.XA1.57)     .5000                   
+
+(X_U1.XA1.58)     .5000               (X_U1.XA1.59)     .5000                   
+
+(X_U1.XA1.60)     .5000               (X_U1.XA1.61)    -.1000                   
+
+(X_U1.XA1.62)    1.1000               (X_U1.XA1.63)     .5000                   
+
+(X_U1.XA1.64)     .5000               (X_U1.XA2.34)     .5000                   
+
+(X_U1.XA2.35)     .5000               (X_U1.XA2.36)     .0300                   
+
+(X_U1.XA2.37)     .9700               (X_U1.XA2.43)     .5000                   
+
+(X_U1.XA2.44)     .5002               (X_U1.XA2.47)     .5000                   
+
+(X_U1.XA2.48)     .5000               (X_U1.XA2.49)     .5000                   
+
+(X_U1.XA2.50)   48.5000               (X_U1.XA2.51)  -68.5000                   
+
+(X_U1.XA2.52)     .5002               (X_U1.XA2.53)     .5000                   
+
+(X_U1.XA2.54)     .5000               (X_U1.XA2.55)     .5000                   
+
+(X_U1.XA2.56)     .5000               (X_U1.XA2.57)     .5000                   
+
+(X_U1.XA2.58)     .5000               (X_U1.XA2.59)     .5000                   
+
+(X_U1.XA2.60)     .5000               (X_U1.XA2.61)    -.1000                   
+
+(X_U1.XA2.62)    1.1000               (X_U1.XA2.63)     .5000                   
+
+(X_U1.XA2.64)     .5000               (X_U2.VOUT_S)     .4996                   
+
+(X_U2.VSENSE)   -1.9191               (X_U2.Xe_n.3)    0.0000                   
+
+(X_U2.Xe_n.4)    0.0000               (X_U2.Xe_n.5)    0.0000                   
+
+(X_U2.Xe_n.6)    0.0000               (X_U2.Xe_n.7)     .8338                   
+
+(X_U2.Xe_n.8)     .8338               (X_U1.XA3.206)     .5005                  
+
+(X_U1.XA3.207)     .5000              (X_U1.XA3.208)     .5004                  
+
+(X_U1.XA3.211)     .5001              (X_U1.XA3.212)     .5000                  
+
+(X_U1.XA3.213)     .5000              (X_U1.XA3.214)     .5000                  
+
+(X_U1.XA3.215)     .5000              (X_U1.XA3.216)    8.4905                  
+
+(X_U1.XA3.217)    8.4905              (X_U1.XA3.218)   -7.4895                  
+
+(X_U1.XA3.219)   -7.4895              (X_U1.XA3.220)    5.5000                  
+
+(X_U1.XA3.221)  -10.5000              (X_U1.XA3.222)     .5000                  
+
+(X_U1.XA3.223)     .5000              (X_U1.XA3.224)    8.4905                  
+
+(X_U1.XA3.225)   -7.4895              (X_U1.XA3.226)   48.5000                  
+
+(X_U1.XA3.227)  -68.5000              (X_U1.XA3.228)     .5005                  
+
+(X_U1.XA3.229)     .5000              (X_U1.XA3.230)     .5000                  
+
+(X_U1.XA3.231)     .5000              (X_U1.XA3.232)     .5000                  
+
+(X_U1.XA3.233)     .5000              (X_U1.XA3.234)     .5000                  
+
+(X_U1.XA3.235)     .9700              (X_U1.XA3.236)     .0300                  
+
+(X_U1.XA3.237)     .9700              (X_U1.XA3.238)     .0300                  
+
+(X_U1.XA3.239)     .5000              (X_U1.XA3.240)     .5000                  
+
+(X_U1.XA3.241)     .5000              (X_U1.XA3.242)     .5000                  
+
+(X_U1.XA3.243)     .5000              (X_U1.XA3.244)     .5001                  
+
+(X_U1.XA3.245)    -.1000              (X_U1.XA3.246)    1.1000                  
+
+(X_U1.XA3.247)     .5001              (X_U1.XA3.248)     .5001                  
+
+(X_U1.XA3.249)     .5001              (X_U2.VCC_CLP)    -.0047                  
+
+(X_U2.VEE_CLP)    1.0064              (X_U2.Xi_nn.3)    0.0000                  
+
+(X_U2.Xi_nn.5)    0.0000              (X_U2.Xi_np.3)    0.0000                  
+
+(X_U2.Xi_np.5)    0.0000              (X_U2.XU1.2_3)     .0747                  
+
+(X_U2.XU1.5_2)     .0748              (X_U2.XU1.5_3) 11.13E-06                  
+
+(X_U1.XA3.VCLP)     .5005             (X_U2.CL_CLAMP)     .4997                 
+
+(X_U2.XU1.4_A0)    -.0085             (X_U2.XU1.4_A2)  -15.6810                 
+
+(X_U2.XU1.net2)     .0748             (X_U2.XU1.out2)   -1.9190                 
+
+(X_U2.XU1.out3)   -1.9190             (X_U2.XU1.out4)   -1.9190                 
+
+(X_U2.XU1.out5)   -1.9190             (X_U2.XU1.out6)   -1.9189                 
+
+(X_U1.XA1.IN_32)    1.0000            (X_U1.XA1.IN_33) 1.070E-12                
+
+(X_U1.XA2.IN_32)    1.0000            (X_U1.XA2.IN_33) 1.070E-12                
+
+(X_U2.XU1.outz1)     .0748            (X_U2.XU1.outz2)     .0747                
+
+(X_U1.XA1.OUT_45)     .5000           (X_U1.XA1.OUT_46)     .5000               
+
+(X_U1.XA1.XE_N.5)    0.0000           (X_U1.XA1.XU1.67)     .4954               
+
+(X_U1.XA1.XU1.68)     .5000           (X_U1.XA1.XU1.69)     .4954               
+
+(X_U1.XA1.XU1.70)     .4954           (X_U1.XA1.XU1.71)     .4954               
+
+(X_U1.XA1.XU1.72)     .4965           (X_U1.XA1.XU1.73)     .4955               
+
+(X_U1.XA1.XU1.74)     .4955           (X_U1.XA1.XU1.75)     .4955               
+
+(X_U1.XA1.XU1.76)     .4955           (X_U1.XA1.XU1.77)     .4954               
+
+(X_U1.XA1.XU2.82)     .5000           (X_U1.XA1.XU2.83)     .5000               
+
+(X_U1.XA1.XU2.84)     .5017           (X_U1.XA1.XU2.85)     .5000               
+
+(X_U1.XA1.XU3.78)     .5000           (X_U1.XA1.XU3.79)     .5000               
+
+(X_U1.XA1.XU3.80)     .4125           (X_U1.XA1.XU3.81)     .5000               
+
+(X_U1.XA2.OUT_45)     .5000           (X_U1.XA2.OUT_46)     .5000               
+
+(X_U1.XA2.XE_N.5)    0.0000           (X_U1.XA2.XU1.67)     .5039               
+
+(X_U1.XA2.XU1.68)     .5000           (X_U1.XA2.XU1.69)     .5039               
+
+(X_U1.XA2.XU1.70)     .5039           (X_U1.XA2.XU1.71)     .5039               
+
+(X_U1.XA2.XU1.72)     .5030           (X_U1.XA2.XU1.73)     .5039               
+
+(X_U1.XA2.XU1.74)     .5039           (X_U1.XA2.XU1.75)     .5039               
+
+(X_U1.XA2.XU1.76)     .5039           (X_U1.XA2.XU1.77)     .5039               
+
+(X_U1.XA2.XU2.82)     .5000           (X_U1.XA2.XU2.83)     .5000               
+
+(X_U1.XA2.XU2.84)     .5017           (X_U1.XA2.XU2.85)     .5000               
+
+(X_U1.XA2.XU3.78)     .5000           (X_U1.XA2.XU3.79)     .5000               
+
+(X_U1.XA2.XU3.80)     .4125           (X_U1.XA2.XU3.81)     .5000               
+
+(X_U1.XA3.IN_187) 599.9E-15           (X_U1.XA3.IN_188)    1.0000               
+
+(X_U1.XA3.XE_N.5)    0.0000           (X_U1.XA3.XU1.67)     .5214               
+
+(X_U1.XA3.XU1.68)     .5000           (X_U1.XA3.XU1.69)     .5214               
+
+(X_U1.XA3.XU1.70)     .5214           (X_U1.XA3.XU1.71)     .5214               
+
+(X_U1.XA3.XU1.72)     .5164           (X_U1.XA3.XU1.73)     .5214               
+
+(X_U1.XA3.XU1.74)     .5214           (X_U1.XA3.XU1.75)     .5214               
+
+(X_U1.XA3.XU1.76)     .5214           (X_U1.XA3.XU1.77)     .5214               
+
+(X_U1.XA3.XU2.82)     .5000           (X_U1.XA3.XU2.83)     .5000               
+
+(X_U1.XA3.XU2.84)     .5017           (X_U1.XA3.XU2.85)     .5000               
+
+(X_U1.XA3.XU3.78)     .5000           (X_U1.XA3.XU3.79)     .5000               
+
+(X_U1.XA3.XU3.80)     .4125           (X_U1.XA3.XU3.81)     .5000               
+
+(X_U2.CLAW_CLAMP)     .4997           (X_U1.XA1.XI_NN.3)    0.0000              
+
+(X_U1.XA1.XI_NN.5)    0.0000          (X_U1.XA1.XI_NP.3)    0.0000              
+
+(X_U1.XA1.XI_NP.5)    0.0000          (X_U1.XA2.XI_NN.3)    0.0000              
+
+(X_U1.XA2.XI_NN.5)    0.0000          (X_U1.XA2.XI_NP.3)    0.0000              
+
+(X_U1.XA2.XI_NP.5)    0.0000          (X_U1.XA3.OUT_209)     .5000              
+
+(X_U1.XA3.OUT_210)     .5000          (X_U1.XA3.VCC_CLP)     .9700              
+
+(X_U1.XA3.VEE_CLP)     .0300          (X_U1.XA3.XI_NN.3)    0.0000              
+
+(X_U1.XA3.XI_NN.5)    0.0000          (X_U1.XA3.XI_NP.3)    0.0000              
+
+(X_U1.XA3.XI_NP.5)    0.0000          (X_U1.XA1.CLAMP_28)     .4998             
+
+(X_U1.XA1.CLAWN_21)     .5000         (X_U1.XA1.CLAWP_22)     .5000             
+
+(X_U1.XA1.SW_OL_29)     .5000         (X_U1.XA1.VIMON_24)     .5000             
+
+(X_U1.XA2.CLAMP_28)     .5002         (X_U1.XA2.CLAWN_21)     .5000             
+
+(X_U1.XA2.CLAWP_22)     .5000         (X_U1.XA2.SW_OL_29)     .5000             
+
+(X_U1.XA2.VIMON_24)     .5000         (X_U1.XA1.VOUT_S_23)     .4998            
+
+(X_U1.XA1.VSENSE_27)     .4998        (X_U1.XA1.ZO_OUT_40)     .4998            
+
+(X_U1.XA2.VOUT_S_23)     .5002        (X_U1.XA2.VSENSE_27)     .5002            
+
+(X_U1.XA2.ZO_OUT_40)     .5002        (X_U1.XA3.CLAMP_195)     .5005            
+
+(X_U1.XA3.SW_OL_196)     .5000        (X_U1.XA3.VIMON_192)     .5000            
+
+(X_U1.XA1.AOL_INN_41)     .5000       (X_U1.XA1.AOL_INP_42)     .5000           
+
+(X_U1.XA2.AOL_INN_41)     .5000       (X_U1.XA2.AOL_INP_42)     .5000           
+
+(X_U1.XA3.VOUT_S_191)     .5004       (X_U1.XA3.VSENSE_194)     .5005           
+
+(X_U1.XA3.ZO_OUT_203)     .5004       (X_U1.XA1.CL_CLAMP_25)     .4998          
+
+(X_U1.XA1.XU1.4_A0_66)     .5000      (X_U1.XA1.XU1.OUT2_65)     .4998          
+
+(X_U1.XA1.ZO_CLEFT_38)     .4955      (X_U1.XA2.CL_CLAMP_25)     .5002          
+
+(X_U1.XA2.XU1.4_A0_66)     .5000      (X_U1.XA2.XU1.OUT2_65)     .5002          
+
+(X_U1.XA2.ZO_CLEFT_38)     .5039      (X_U1.XA3.AOL_INN_204)     .5001          
+
+(X_U1.XA3.AOL_INP_205)     .5001      (X_U1.XA3.XU1.4_A0_66)     .5000          
+
+(X_U1.XA3.XU1.OUT2_65)     .5005      (X_U1.XA1.ZO_CRIGHT_39)     .5000         
+
+(X_U1.XA2.ZO_CRIGHT_39)     .5000     (X_U1.XA3.CL_CLAMP_189)     .5005         
+
+(X_U1.XA3.ZO_CLEFT_201)     .5214     (X_U1.XA1.CLAW_CLAMP_26)     .4998        
+
+(X_U1.XA2.CLAW_CLAMP_26)     .5002    (X_U1.XA3.ZO_CRIGHT_202)     .5002        
+
+(X_U1.XA1.ESD_INA333N_30)     .5000   (X_U1.XA1.ESD_INA333P_31)     .5000       
+
+(X_U1.XA2.ESD_INA333N_30)     .5000   (X_U1.XA2.ESD_INA333P_31)     .5000       
+
+(X_U1.XA3.CLAW_CLAMP_193)     .5005   (X_U1.XA3.ESD_INA333N_197)     .5001      
+
+(X_U1.XA3.ESD_INA333P_198)     .5001  
+
+
+  These voltages failed to converge:
+
+    V(2.5V)                   =   496.95mV  \   500.00mV
+    V(N01527)                 =   490.75mV  \   499.62mV
+    V(N00824)                 =   497.39mV  \   500.42mV
+    V(N01230)                 =   497.39mV  \   500.00mV
+    V(X_U1.IN-_19)            =   498.60mV  \   500.11mV
+    V(X_U1.IN+_20)            =   498.57mV  \   500.09mV
+    V(X_U2.ESDn)              =   496.95mV  \   500.00mV
+    V(X_U2.30)                =   497.39mV  \   500.00mV
+    V(X_U2.38)                =    -1.900V  \    -1.913V
+    V(X_U2.VCLP)              =   512.80mV  \   499.70mV
+    V(X_U2.44)                =    -1.900V  \    -1.913V
+    V(X_U2.37)                =    -1.900V  \    -1.913V
+    V(X_U2.36)                =     2.875V  \     2.862V
+    V(X_U2.43)                =     2.875V  \     2.862V
+    V(X_U2.35)                =     2.875V  \     2.862V
+    V(X_U2.27)                =   490.75mV  \   499.62mV
+    V(X_U2.33)                =   -70.14uV  \    59.02uV
+    V(X_U2.34)                =   -70.14uV  \    59.02uV
+    V(X_U2.ESDp)              =   497.39mV  \   500.00mV
+    V(X_U2.CLAMP)             =    -1.905V  \    -1.919V
+    V(X_U2.VSENSE)            =    -1.905V  \    -1.919V
+    V(X_U2.47)                =    -1.905V  \    -1.919V
+    V(X_U2.55)                =   988.62mV  \     1.006V
+    V(X_U2.57)                =   988.62mV  \     1.006V
+    V(X_U2.VEE_CLP)           =   988.62mV  \     1.006V
+    V(X_U2.58)                =   495.46mV  \   504.33mV
+    V(X_U2.59)                =   497.88mV  \   506.75mV
+    V(X_U2.60)                =   495.46mV  \   504.33mV
+    V(X_U2.61)                =   497.88mV  \   506.75mV
+    V(X_U2.24)                =     22.08V  \    74.76mV
+    V(X_U2.26)                =     22.03V  \    27.59mV
+    V(X_U2.63)                =    48.47mV  \   -5.338mV
+    V(X_U2.64)                =   490.75mV  \   499.62mV
+    V(X_U2.VOUT_S)            =   490.75mV  \   499.62mV
+    V(X_U2.VIMON)             =    48.43mV  \   -5.338mV
+    V(X_U2.65)                =   512.80mV  \   499.70mV
+    V(X_U2.CL_CLAMP)          =   512.80mV  \   499.70mV
+    V(X_U2.23)                =   497.30mV  \   499.91mV
+    V(X_U2.66)                =   497.30mV  \   499.91mV
+    V(X_U2.73)                =   497.33mV  \   499.94mV
+    V(X_U2.69)                =   497.30mV  \   499.91mV
+    V(X_U2.22)                =   496.95mV  \   500.00mV
+    V(X_U2.74)                =   497.33mV  \   499.94mV
+    V(X_U2.75)                =   497.31mV  \   499.92mV
+    V(X_U1.XA1.ZO_CLEFT_38)   =   496.12mV  \   495.46mV
+    V(X_U1.XA1.ZO_CRIGHT_39)  =   500.62mV  \   499.96mV
+    V(X_U1.XA2.ZO_CLEFT_38)   =   504.57mV  \   503.90mV
+    V(X_U1.XA2.ZO_CRIGHT_39)  =   500.70mV  \   500.03mV
+    V(X_U1.XA3.ESD_INA333N_197) =   498.60mV  \   500.11mV
+    V(X_U1.XA3.ESD_INA333P_198) =   498.57mV  \   500.09mV
+    V(X_U1.XA3.AOL_INP_205)   =   498.59mV  \   500.11mV
+    V(X_U1.XA3.VOUT_S_191)    =   497.39mV  \   500.42mV
+    V(X_U1.XA3.228)           =   497.42mV  \   500.48mV
+    V(X_U1.XA3.VCLP)          =   497.42mV  \   500.48mV
+    V(X_U1.XA3.206)           =   497.42mV  \   500.48mV
+    V(X_U1.XA3.CL_CLAMP_189)  =   497.42mV  \   500.48mV
+    V(X_U1.XA3.208)           =   497.39mV  \   500.42mV
+    V(X_U1.XA3.247)           =   498.59mV  \   500.11mV
+    V(X_U1.XA3.248)           =   498.59mV  \   500.11mV
+    V(X_U1.XA3.211)           =   498.57mV  \   500.09mV
+    V(X_U1.XA3.249)           =   498.59mV  \   500.11mV
+    V(X_U1.XA3.AOL_INN_204)   =   498.60mV  \   500.11mV
+    V(X_U1.XA3.244)           =   498.59mV  \   500.11mV
+    V(X_U1.XA3.VSENSE_194)    =   497.42mV  \   500.48mV
+    V(X_U1.XA3.ZO_CLEFT_201)  =   512.15mV  \   521.35mV
+    V(X_U1.XA3.ZO_CRIGHT_202) =   491.13mV  \   500.19mV
+    V(X_U1.XA3.CLAMP_195)     =   497.42mV  \   500.48mV
+    V(X_U1.XA3.ZO_OUT_203)    =   497.39mV  \   500.42mV
+    V(X_U2.XU4.7)             =   109.24mV  \   109.81mV
+    V(X_U2.XU1.4_A0)          =    34.99mV  \   -8.518mV
+    V(X_U2.XU1.4_A2)          =    -15.57V  \    -15.68V
+    V(X_U2.XU1.out2)          =    -1.905V  \    -1.919V
+    V(X_U2.XU1.out3)          =    -1.905V  \    -1.919V
+    V(X_U2.XU1.out4)          =    -1.905V  \    -1.919V
+    V(X_U2.XU1.out5)          =    -1.905V  \    -1.919V
+    V(X_U2.XU1.out6)          =    -1.905V  \    -1.919V
+    V(X_U2.CLAW_CLAMP)        =   512.80mV  \   499.70mV
+    V(X_U2.XU1.outz1)         =     59.72V  \    74.76mV
+    V(X_U2.XU1.outz2)         =     54.42V  \    74.75mV
+    V(X_U2.XU1.net2)          =     54.43V  \    74.76mV
+    V(X_U2.XU1.5_2)           =     54.33V  \    74.76mV
+    V(X_U2.XU1.2_3)           =     54.50V  \    74.75mV
+    V(X_U2.XU1.5_3)           =    28.55uV  \    11.14uV
+    V(X_U1.XA1.XU1.72)        =   499.47mV  \   496.52mV
+    V(X_U1.XA1.XU1.73)        =   499.30mV  \   495.45mV
+    V(X_U1.XA1.XU1.75)        =   499.09mV  \   495.45mV
+    V(X_U1.XA1.XU1.70)        =   499.30mV  \   495.44mV
+    V(X_U1.XA1.XU1.67)        =   499.30mV  \   495.44mV
+    V(X_U1.XA1.XU1.76)        =   569.12mV  \   495.45mV
+    V(X_U1.XA1.XU1.71)        =   499.31mV  \   495.44mV
+    V(X_U1.XA1.XU1.74)        =   499.30mV  \   495.45mV
+    V(X_U1.XA1.XU1.69)        =   499.30mV  \   495.44mV
+    V(X_U1.XA1.XU1.77)        =   499.30mV  \   495.44mV
+    V(X_U1.XA2.XU1.72)        =   505.95mV  \   502.98mV
+    V(X_U1.XA2.XU1.73)        =   507.76mV  \   503.89mV
+    V(X_U1.XA2.XU1.75)        =   507.54mV  \   503.89mV
+    V(X_U1.XA2.XU1.70)        =   507.79mV  \   503.91mV
+    V(X_U1.XA2.XU1.67)        =   507.79mV  \   503.91mV
+    V(X_U1.XA2.XU1.76)        =   577.91mV  \   503.89mV
+    V(X_U1.XA2.XU1.71)        =   507.80mV  \   503.91mV
+    V(X_U1.XA2.XU1.74)        =   507.76mV  \   503.89mV
+    V(X_U1.XA2.XU1.69)        =   507.79mV  \   503.91mV
+    V(X_U1.XA2.XU1.77)        =   507.79mV  \   503.91mV
+    V(X_U1.XA3.CLAW_CLAMP_193) =   497.42mV  \   500.48mV
+    V(X_U1.XA3.XU1.72)        =   475.64mV  \   516.36mV
+    V(X_U1.XA3.XU1.73)        =   468.28mV  \   521.35mV
+    V(X_U1.XA3.XU1.75)        =   471.29mV  \   521.35mV
+    V(X_U1.XA3.XU1.70)        =   468.21mV  \   521.44mV
+    V(X_U1.XA3.XU1.OUT2_65)   =   497.42mV  \   500.48mV
+    V(X_U1.XA3.XU1.67)        =   468.15mV  \   521.43mV
+    V(X_U1.XA3.XU1.76)        =  -493.74mV  \   521.35mV
+    V(X_U1.XA3.XU1.71)        =   468.08mV  \   521.44mV
+    V(X_U1.XA3.XU1.74)        =   468.28mV  \   521.35mV
+    V(X_U1.XA3.XU1.69)        =   468.15mV  \   521.44mV
+    V(X_U1.XA3.XU1.4_A0_66)   =   499.28mV  \   500.00mV
+    V(X_U1.XA3.XU1.77)        =   468.14mV  \   521.43mV
+
+  These supply currents failed to converge:
+
+    I(X_U1.E1)                =  -168.34pA  \  -114.57pA
+    I(X_U2.E5)                =    66.53nA  \  -498.61fA
+    I(X_U2.E4)                =    -9.83nA  \ 101.48e-18A
+    I(X_U2.E1)                =   -40.49nA  \    4.524pA
+    I(X_U1.XA3.E4)            =    2.292nA  \ -18.22e-18A
+    I(X_U1.XA3.E5)            =    22.72nA  \ -556.44e-18A
+    I(V_Vref)                 =   -2.986mA  \   -32.94mA
+    I(X_U2.V11)               =    81.25uA  \   -47.91uA
+    I(X_U2.V4)                =    48.45uA  \   -5.349uA
+    I(X_U1.XA1.V4)            =    4.004nA  \   -6.083nA
+    I(X_U1.XA2.V4)            =    14.66nA  \    4.528nA
+    I(X_U1.XA3.V4)            =   -8.163nA  \    43.87nA
+    I(X_U2.H1)                =  -403.22nA  \    5.159fA
+    I(X_U1.XA1.H1)            =   -75.60pA  \ -121.03e-18A
+    I(X_U1.XA2.H1)            =   -75.96pA  \ -131.44e-18A
+    I(X_U1.XA3.H1)            =   389.93pA  \ -100.61e-18A
+
+  These devices failed to converge:
+    X_U2.XIQPos.G1 X_U2.XIQNeg.G1 X_U2.XCLAWp.G1 X_U2.XCLAWn.G1 
+    X_U1.XA1.XIQNEG.G1 X_U1.XA1.XIQPOS.G1 X_U1.XA3.XIQNEG.G1 X_U1.XA3.XIQPOS.G1 
+
+**** Interrupt ****

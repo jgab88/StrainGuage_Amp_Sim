@@ -1,0 +1,27 @@
+** Profile: "SCHEMATIC1-Rgauge_2"  [ d:\users\jerryg\projects\pspice_practice\first_ws\StrainGuage_Amp\StrainGuage_Amp-PSpiceFiles\SCHEMATIC1\Rgauge_2.sim ] 
+
+** Creating circuit file "Rgauge_2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM Rgauge 350 355 1 
+.OPTIONS OPTS
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.OPTIONS ABSTOL= 1n
+.OPTIONS RELTOL= 2m
+.OPTIONS VNTOL= 1m
+.OPTIONS SPEED_LEVEL= 5
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

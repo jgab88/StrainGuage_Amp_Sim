@@ -1,0 +1,18 @@
+* source STRAINGUAGE_AMP
+* PSpice Text Block on SCHEMATIC1 PAGE1
+.OPTIONS PTRANABSTOL=10U PTRANVNTOL=100U
+***
+R_R1         VSIG+ VREF  350 TC=0,0 
+R_R2         VSIG- VREF  350 TC=0,0 
+R_R3         0 VSIG+  350 TC=0,0 
+R_R4         0 VSIG-  {Rgauge} TC=0,0 
+X_U1         VSIG+ VSIG- VREF 0 INA_OUT 2.5V N00913 N00917 INA333
+V_Vref         VREF 0 5V
+R_R5         N00913 N00917  2.56K TC=0,0 
+X_U2         INA_OUT N02810 VREF 0 OPA_OUT OPA336
+R_R6         VREF 2.5V  10k TC=0,0 
+R_R7         2.5V 0  10k TC=0,0 
+R_R8         N02810 0  10k TC=0,0 
+R_R10         OPA_OUT N02810  5k TC=0,0 
+R_R11         0 OPA_OUT  10k TC=0,0 
+.PARAM  vsweep=5v rgauge=350
